@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-const Navbar = ({title}) =>{
- 
+const Navbar = ({title}) => {
         return (
             <nav className="navbar navbar-dark bg-dark shadow mb-4">
                 <div className="container">
@@ -22,7 +21,7 @@ const Navbar = ({title}) =>{
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Sök..." aria-label="Sök"></input>
+                            <input id="search-fied" className="form-control me-2" type="search" placeholder="Sök..." aria-label="Sök"></input>
                             <button className="btn btn-secondary" type="submit">Sök</button>
                         </form>
                     </div>
