@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect} from "react";
+import ActorList from "./ActorList";
+import { async } from "q";
 
 function App() {
+  const [actors, setActors] = useState([]);
+
+  useEffect ( () => {
+      const mostPopularActors = async () => {
+        const apiKey = '9595bac57a62b5ff9e1564b3b85150f5';
+        const url = 'https://api.themoviedb.org/3/person/popular?api_key=' + apiKey;
+
+        const response = await fetch(url);
+        const responseJson = await response.json();
+
+        if (responseJson.results) {
+          setActors(responseJson.results);
+        }
+      };
+
+      mostPopularActors();
+    }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <ActorList actors={actors} />
     </div>
   );
 }
 
 export default App;
+
+
+
+
