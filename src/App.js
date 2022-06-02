@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react";
 import ActorList from "./ActorList";
-import { async } from "q";
+import ActorInfo from "./ActorInfo";
+
 
 function App() {
   const [actors, setActors] = useState([]);
@@ -24,12 +25,9 @@ function App() {
   return (
     <div className="container">
       <ActorList actors={actors} />
+      <ActorInfo />
     </div>
   );
 }
 
 export default App;
-
-
-
-
