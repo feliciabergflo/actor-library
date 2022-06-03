@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "my-app",
-=======
   "name": "actor-library-react",
->>>>>>> fa0316334134fb53d5892357858671af184fc766
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,21 +8,12 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-<<<<<<< HEAD
     "react-scripts": "5.0.1",
     "reactjs-popup": "^2.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
-=======
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
->>>>>>> fa0316334134fb53d5892357858671af184fc766
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
