@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from "react";
 import ActorList from "./ActorList";
 import ActorInfo from "./ActorInfo";
+import Footer from "./Footer";
+
 
 
 function App() {
@@ -47,6 +49,7 @@ function App() {
     <div className="container">
       <ActorList actors={actors} getActor={getActor}/>
       <ActorInfo show={show} />
+      <Footer />
     </div>
     
   );
