@@ -2,7 +2,6 @@ import React, { useState, useEffect} from "react";
 import ActorList from "./ActorList";
 import ActorInfo from "./ActorInfo";
 import Footer from "./Footer";
-import Nav from "./Nav";
 
 
 function App() {
@@ -58,7 +57,6 @@ function App() {
 
   return (
     <div className="container">
-      <Nav />
       <ActorList actors={actors} getActor={getActor}/>
       <ActorInfo key={actor.id} actor={actor} />
       <Footer />
