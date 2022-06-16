@@ -2,11 +2,12 @@ import React from 'react';
 
 const ActorInfo = ({actor}) => {
   return (
-    <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal fade" id="actorModal" tabIndex="-1" aria-labelledby="actorModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-xl">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="exampleModalLabel">{actor.name}</h5>
+            <h5 className="modal-title" id="actorModalLabel">{actor.name}</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">
             <div className="container-fluid">
@@ -15,6 +16,7 @@ const ActorInfo = ({actor}) => {
                   <img src={actor.image} className='w-100' alt={actor.name}></img>
                 </div>
                 <div className="col-7">
+                  <p className='fs-3'>Biography</p>
                   <p>{actor.biography}</p>
                   <p><strong>Known for:</strong></p>
                   <div className='d-flex align-content-stretch flex-nowrap overflow-auto'>
