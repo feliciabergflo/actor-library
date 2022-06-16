@@ -2,11 +2,12 @@ import React, { useState, useEffect} from "react";
 import ActorList from "./ActorList";
 import ActorInfo from "./ActorInfo";
 import Footer from "./Footer";
+import Nav from "./Nav";
+
 
 function App() {
   const [actors, setActors] = useState([]);
   const [actor, setActor] = useState({});
-
 
   useEffect ( () => {
       const mostPopularActors = async () => {
@@ -57,8 +58,9 @@ function App() {
 
   return (
     <div className="container">
+      <Nav />
       <ActorList actors={actors} getActor={getActor}/>
-      <ActorInfo actor={actor} />
+      <ActorInfo key={actor.id} actor={actor} />
       <Footer />
     </div>
     
