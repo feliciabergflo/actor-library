@@ -6,10 +6,10 @@ import Favorites from "./components/Favorites";
 import ActorInfo from "./ActorInfo";
 import Footer from "./Footer";
 
+
 function App() {
   const [actors, setActors] = useState([]);
   const [actor, setActor] = useState({});
-
 
   useEffect ( () => {
       const mostPopularActors = async () => {
