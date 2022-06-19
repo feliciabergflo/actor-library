@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useState, useEffect} from "react";
 import Navbar from "./components/Navbar";
-import ActorList from "./ActorList";
 import Favorites from "./components/Favorites";
+import ActorList from "./ActorList";
 import ActorInfo from "./ActorInfo";
 import Footer from "./Footer";
 
@@ -59,17 +58,14 @@ function App() {
     }
 
   return (
-    <Router>
+    <div>
       <Navbar />
       <div className="container">
-        <Routes>
-          <Route exact path="/" element={<ActorList actors={actors} getActor={getActor} />} />
-          <Route exact path="/actor" element={<ActorInfo actor={actor} />} />
-          <Route exact path="/favorites" element={<Favorites />} />
-        </Routes>
+        <ActorList actors={actors} getActor={getActor}/>
+        <ActorInfo key={actor.id} actor={actor} />
       </div>
       <Footer />
-    </Router>
+    </div>
   );
 }
 
