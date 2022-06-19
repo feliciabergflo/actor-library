@@ -17,6 +17,12 @@ export default function Favorites() {
         /* Ta bort från localStorage också */
     }
 
+    /*document.addEventListener("click", function (e) {
+        if (!e.target.matches("#favoriteBtn")) return;
+        let jsonFavorites = JSON.stringify
+
+    }, false); */   
+
     return (
         <div>
             <h1 className="mb-3">Favoriter</h1>
