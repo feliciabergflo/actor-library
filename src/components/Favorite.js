@@ -1,11 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
 
 export default function Favorite(props) {
     return (
-        <li className="list-group-item">
-            <Link to='/' className="link-dark">{ props.item.name }</Link>
-            <button className="btn-close float-end" onClick={() => {props.deleteFavorite(props.item.id)}}></button>
+        <li className="list-group-item list-group-item-secondary mt-1 mb-3">
+            { props.item.title }
+            <button className="btn-close btn-sm float-end" onClick={() => {props.deleteItem(props.item.id)}}></button>
         </li>
     )
 }

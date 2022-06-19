@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from "react";
 import Navbar from "./components/Navbar";
-import Favorites from "./components/Favorites";
 import ActorList from "./ActorList";
 import ActorInfo from "./ActorInfo";
 import Footer from "./Footer";
