@@ -1,6 +1,16 @@
 import React from 'react';
 
 const ActorInfo = ({actor}) => {
+
+  let storedFavorites = [];
+
+  function addFavorite(storedFavorites) {
+    storedFavorites.push(actor.name);
+    alert(storedFavorites);
+    let jsonFavorites = JSON.stringify(storedFavorites);
+    localStorage.setItem("favorites", jsonFavorites);
+  }
+
   return (
     <div className="modal fade" id="actorModal" tabIndex="-1" aria-labelledby="actorModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-xl">

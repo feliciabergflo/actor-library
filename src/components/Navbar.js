@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import Favorite from "./Favorite";
+import Favorites from "./Favorites";
+import Favorite from './Favorite';
 
 export default function Navbar() {
     const [isShown, setIsShown] = useState(false);

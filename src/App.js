@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import ActorList from "./ActorList";
 import ActorInfo from "./ActorInfo";
 import Footer from "./Footer";
-
+import Favorites from "./components/Favorites";
 
 function App() {
   const [actors, setActors] = useState([]);

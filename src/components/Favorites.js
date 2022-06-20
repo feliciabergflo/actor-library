@@ -3,6 +3,19 @@ import Favorite from './Favorite';
 
 export default function Favorites() {
     const [favorites, setFavorites] = useState([]);
+
+    function addFavorite(name) {
+
+    }
+
+    function deleteFavorite(id) {
+        setFavorites(favorites.filter((item) => item.id !== id));
+    }
+
+
+
+    /*
+    const [favorites, setFavorites] = useState([]);
     const inputRef = useRef();
 
     useEffect(() => {
@@ -14,8 +27,8 @@ export default function Favorites() {
 
     function deleteFavorite(id) {
         setFavorites(favorites.filter((item) => item.id !== id));
-        /* Ta bort från localStorage också */
-    }
+        */
+    
 
     return (
         <div>
