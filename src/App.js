@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import ActorList from "./ActorList";
 import ActorInfo from "./ActorInfo";
 import Footer from "./Footer";
-
+import Search from "./search1";
 
 function App() {
   const [actors, setActors] = useState([]);
@@ -32,13 +32,10 @@ function App() {
       const response = await fetch(url);
       const details = await response.json();
 
-
       const urlMovies = `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${apiKey}`;
       const responsemovies = await fetch(urlMovies);
       const movies = await responsemovies.json();
-
-  
-      
+    
       if (details && movies) {
         const moviesArr = [];
         movies.cast.map( movie =>
@@ -54,14 +51,39 @@ function App() {
         });
       }
     }
+    const setActorAfterSearchResult = async (query) => {
+      if (query.length >= 3) {
+        const apiKey = '9595bac57a62b5ff9e1564b3b85150f5';
+        const url = `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=${query}`;
+        const response = await fetch(url);
+        const result = await response.json();
+
+        setActors(result.results);
+      } else if (query.length === 0) {
+        const mostPopularActors = async () => {
+          const apiKey = '9595bac57a62b5ff9e1564b3b85150f5';
+          const url = 'https://api.themoviedb.org/3/person/popular?api_key=' + apiKey;
+
+          const response = await fetch(url);
+          const responseJson = await response.json();
+
+          if (responseJson.results) {
+            setActors(responseJson.results);
+          }
+
+        };
+
+        mostPopularActors();
+      }
+    }
 
   return (
     <div className="container">
-      <ActorList actors={actors} getActor={getActor}/>
+      <Search setActorAfterSearchResult={setActorAfterSearchResult} />
+      <ActorList actors={actors} getActor={getActor} />
       <ActorInfo key={actor.id} actor={actor} />
       <Footer />
     </div>
-    
   );
 }
 
