@@ -1,14 +1,17 @@
 import React, { useState, useEffect} from "react";
-import Navbar from "./components/Navbar";
-import Favorites from "./components/Favorites";
+import{BrowserRouter, Routes, Route,} from "react-router-dom";
 import ActorList from "./ActorList";
 import ActorInfo from "./ActorInfo";
 import Footer from "./Footer";
 import Search from "./search1";
+import Nav from "./Navbar1";
+import MyFavorite from "./MyFaviorits";
+
 
 function App() {
   const [actors, setActors] = useState([]);
   const [actor, setActor] = useState({});
+  const [favorites, setFavorites] = useState([]);
 
   useEffect ( () => {
       const mostPopularActors = async () => {
@@ -79,13 +82,48 @@ function App() {
       }
     }
 
+    useEffect ( () => {
+      const favStorage1 = localStorage.getItem('favStorage');
+      let favList1 = JSON.parse(favStorage1) || [];
+
+      setFavorites(favList1);
+    }, []);
+
+    const addToFavorite = () => {
+      const favStorage = localStorage.getItem('favStorage');
+      let favList = JSON.parse(favStorage) || [];
+      favList.push(actor);
+      localStorage.setItem("favStorage", JSON.stringify(favList));
+
+      setFavorites(favList);
+    }
+
+    const deleteFavorite = (e, actorname) => {
+      e.preventDefault();
+      let favoritesFilter = favorites.filter((fav)=> {
+        return fav.name !== actorname
+      });
+      localStorage.setItem('favStorage', JSON.stringify(favoritesFilter));
+
+      setFavorites(favoritesFilter);
+    }
+
+
   return (
-    <div className="container">
-      <Search setActorAfterSearchResult={setActorAfterSearchResult} />
-      <ActorList actors={actors} getActor={getActor} />
-      <ActorInfo key={actor.id} actor={actor} />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="container">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<>
+            <Search setActorAfterSearchResult={setActorAfterSearchResult} />
+            <ActorList actors={actors} getActor={getActor} />
+            <ActorInfo key={actor.id} actor={actor} addToFavorite={addToFavorite} />
+          </>}/>
+          <Route path="/favorites" element={<MyFavorite favorites={favorites} deleteFavorite={deleteFavorite} />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

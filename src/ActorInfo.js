@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ActorInfo = ({actor}) => {
+const ActorInfo = ({actor, addToFavorite}) => {
   return (
     <div className="modal fade" id="actorModal" tabIndex="-1" aria-labelledby="actorModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-xl">
@@ -33,7 +33,7 @@ const ActorInfo = ({actor}) => {
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Add to favorite</button>
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={addToFavorite}>Add to favorite</button>
           </div>
         </div>
       </div>

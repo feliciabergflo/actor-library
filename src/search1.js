@@ -2,7 +2,7 @@ import React from "react";
 
 const Search = (props) => {
 	return (
-		<div>
+		<div className="row mt-5">
 			<input
                 className="form-control me-2"
                 type="text"
