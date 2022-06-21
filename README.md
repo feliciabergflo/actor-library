@@ -1,11 +1,12 @@
-# Getting Started with Create React App
+# About project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Its an actor library website wich use TMDB Api. The website shows the user the most popular actors who are constantly updates with the most popular actors and when the user click on one of these actors so shos up a modal with actor informatin. The website contains a search function that takes the user on to the sought-after actor with a picture of the actor, biography and the films for which he is known. Users have the option after reading about the specific wanted actor to save it in the favorites page.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
