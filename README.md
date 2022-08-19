@@ -1,6 +1,6 @@
 # About project
 
-Its an actor library website that is built using the react framework and uses [https://www.themoviedb.org/documentation/api](TMDB Api). The website shows the user the most popular actors who are constantly updates with the most popular actors and when the user click on one of these actors so shos up a modal with actor informatin. The website contains a search function that takes the user on to the sought-after actor with a picture of the actor, biography and the films for which he is known. Users have the option after reading about the specific wanted actor to save it in the favorites page.
+Its an actor library website that is built using the react framework and uses [TMDB API](https://www.themoviedb.org/documentation/api). The website shows the user the most popular actors who are constantly updates with the most popular actors and when the user click on one of these actors so shos up a modal with actor informatin. The website contains a search function that takes the user on to the sought-after actor with a picture of the actor, biography and the films for which he is known. Users have the option after reading about the specific wanted actor to save it in the favorites page.
 
 ## Available Scripts
 
