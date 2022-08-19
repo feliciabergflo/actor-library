@@ -1,6 +1,13 @@
-# About project
+# About the project
 
 Its an actor library website that is built using the react framework and uses [TMDB API](https://www.themoviedb.org/documentation/api). The website shows the user the most popular actors who are constantly updates with the most popular actors and when the user click on one of these actors so shos up a modal with actor informatin. The website contains a search function that takes the user on to the sought-after actor with a picture of the actor, biography and the films for which he is known. Users have the option after reading about the specific wanted actor to save it in the favorites page.
+
+# Comparison between frameworks
+
+We chose to use React as a JS-framework in this project. The main reason were the fact that multiple sources claim that React is the most frequently used framework with a big community of users. Out of all framworks, there are most questions posted on Stack Overflow regarding React, which means that there are more guides and a higher chance of finding solutions to any problems we may encounter. Both of us had also worked with React in previous projects, and felt that we hade some experience to build on. We agreed that we would rather deepen our knowledge of React than learn how to work with a whole new framework. 
+
+The two most used JavaScript frameworks after React are Vue and Angular among other. The three of them were released moderately close together, but Angular being the oldest (released 2010) and Vue being the newest (released 2014). What differs React from Vue and Angular is mainly the fact that React is a library and the other two are frameworks. Frameworks uses components to build the application, and includes tools for working with routing and data store. Since React is a library, solutions for routing and data store are not included, but has the use of components in common with Vue and Angular. 
+
 
 ## Available Scripts
 
